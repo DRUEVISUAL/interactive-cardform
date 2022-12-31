@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="theme-color" content="hsl(278, 68%, 11%)">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  
+</head>
+<body>
+  
+  <header id="header">
+    <div class="header_card_container">
+      
+      <div class="header_card_back_container">
+        <span id="header_card_back_cvc">000</span>
+      </div>
+      
+      <div class="header_card_front_container">
+        
+        <img src="./images/card-logo.svg" alt="logo of the cards issuer company" class="header_card_front_logo">
+        
+        <div class="header_card_front_data_rows">
+          <div class="header_card_front_first_row">
+            <span id="header_card_front_number"><span id="numA">0000</span><span id="numB">0000</span><span id="numC">0000</span><span id="numD">0000</span></span>
+          </div>
+          <div class="header_card_front_second_row">
+            <span id="header_card_front_name">Name Surename</span>
+            <span id="header_card_front_date"><span id="header_card_front_date_MM">00</span>/<span id="header_card_front_date_YY">00</span> </span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <form action="#" id="form">
+      
+      <div class="input_label_group">
+        <label for="full_name">cardholder name</label>
+        <input type="text" name="full_name" id="full_name" placeholder="e.g Jane Appleseed" aria-label="Enter full name" aria-placeholder="hidden" required>
+      </div>
+      
+      <div class="input_label_group">
+        <label for="card_number">card number</label>
+        <input type="text" name="card_number" id="card_number" placeholder="e.g 1234 5678 9123 0000" minlength="16" maxlength="16" 
+         aria-label="Enter the 16 digit of your bank card" aria-placeholder="hidden" required>
+      </div>
+      
+      <div class="input_label_container">
+        <div class="input_label_group_exp_date">
+          <label for="exp_date">exp. date (MM/YY)</label>
+          <div class="exp_date_input_group">
+            <input type="number" name="exp_date_MM" id="exp_date_MM" min="1" max="12" placeholder="MM" aria-placeholder="hidden" aria-label="month in numbers" required>
+            <input type="number" name="exp_date_YY" id="exp_date_YY" min="22" max="99" placeholder="YY" required>
+          </div>
+        </div>
+        
+        <div class="input_label_group_cvc">
+          <label for="cvc">cvc</label>
+          <input type="number" name="cvc" id="cvc" min="100" max="999" placeholder="e.g. 123" minlength="3" maxlength="3" required>
+        </div>
+      </div>
+      
+      <input type="submit" value="Confirm" class="input_submit">
+      
+    </form>
+    
+    <section id="thanks_panel" aria-label="thank you, your card has been succesfully added">
+      <img src="./images/icon-complete.svg" alt="Checkmark, succesfully added">
+      
+      <div class="thanks_text_container">
+        <p class="thanks">Thank you!</p>
+        
+        <p class="added">We've added your card details</p>
+      </div>
+      
+      <button id="continue_button" class="input_submit">Continue</button>
+    </section>
+  </main>
+
+  <aside id="aside">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+      Coded by <a href="https://www.frontendmentor.io/profile/DRUEVISUAL">DRUEVISUAL</a>
+    </div>
+
+    <button class="reload" onClick="window.location.reload();">Refresh Page</button>
+  </aside>
+</body>
+</html>
+
+<script src="./index.js"></script>
