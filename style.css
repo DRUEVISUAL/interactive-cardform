@@ -151,6 +151,14 @@ main {
   padding-block: 0.6rem;
 }
 
+.input_label_group.error input, .input_label_group_exp_date.error input, .input_label_group_cvc.error input {
+  outline: 2px solid red;
+}
+
+.input_label_group input:focus, .input_label_container input:focus-visible, .input_submit:focus {
+  outline: 2px solid var(--gradient_purple);
+}
+
 input::-moz-placeholder {
   font-size: var(--heading_L);
   color: var(--verydark_violet);
@@ -167,6 +175,16 @@ input::placeholder {
   font-size: var(--heading_L);
   color: var(--verydark_violet);
   opacity: 0.25;
+}
+
+small {
+  visibility: hidden;
+  font-size: var(--body_S_M);
+  color: red;
+}
+
+.input_label_group.error small, .input_label_group_exp_date.error small, .input_label_group_cvc.error small {
+  visibility: visible;
 }
 
 .input_label_container {
@@ -390,5 +408,8 @@ aside a:last-child {
   }
   .header_card_front_logo {
     width: 18%;
+  }
+  .input_label_group, .input_label_container {
+    margin-bottom: 1.4rem;
   }
 }/*# sourceMappingURL=style.css.map */

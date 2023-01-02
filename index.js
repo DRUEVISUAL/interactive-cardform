@@ -6,18 +6,18 @@ let numD = document.querySelector("#numD")
 let cardName = document.querySelector('#header_card_front_name')
 let expDateMonth = document.querySelector('#header_card_front_date_MM')
 let expDateYear = document.querySelector('#header_card_front_date_YY')
-let headerDisplay = document.querySelector('#header')
-let asideDisplay = document.querySelector('#aside')
 
 const inputName = document.querySelector('#full_name')
 const inputExpDateMonth = document.querySelector('#exp_date_MM')
 const inputExpDateYear = document.querySelector('#exp_date_YY')
 const inputCVC = document.querySelector('#cvc')
-
 const submit =  document.querySelector('.input_submit')
 const continueButton = document.querySelector('#continue_button')
+
 const formDisplay = document.querySelector('#form')
 const thankyouDisplay = document.querySelector('#thanks_panel')
+const headerDisplay = document.querySelector('#header')
+const asideDisplay = document.querySelector('#aside')
 
 let arr = document.getElementsByTagName("input");
 let newArr = []
@@ -25,7 +25,6 @@ let newArr = []
 window.addEventListener('load', () => {
     thankyouDisplay.style.display = 'none';
     asideDisplay.style.display = 'none';
-
 }) 
 
 form.addEventListener('submit', (e) => {
@@ -42,6 +41,7 @@ continueButton.addEventListener('click', () => {
     asideDisplay.style.display = 'flex';
 })
 
+
 function func() {
     cardCVC.innerHTML = inputCVC.value;
     cardName.innerHTML = inputName.value;
@@ -57,4 +57,3 @@ function func2() {
     numC.innerHTML = newArr[0].slice(8, 12)
     numD.innerHTML = newArr[0].slice(12, 16)
 }
-
