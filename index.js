@@ -30,10 +30,26 @@ window.addEventListener('load', () => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-    func()
-    func2()
+    inputToCard()
+    cardNumberSeparator()
     formDisplay.hidden = true;
     thankyouDisplay.style.display = 'flex';
+})
+
+inputName.addEventListener('keyup',()=>{
+    mirrorIfValid(validityChecker(inputName), cardName, inputName)
+})
+
+inputExpDateMonth.addEventListener('keyup',()=>{
+    mirrorIfValid(validityChecker(inputExpDateMonth), expDateMonth, inputExpDateMonth)
+})
+
+inputExpDateYear.addEventListener('keyup',()=>{
+    mirrorIfValid(validityChecker(inputExpDateYear), expDateYear, inputExpDateYear)
+})
+
+inputCVC.addEventListener('keyup',()=>{
+    mirrorIfValid(validityChecker(inputCVC), cardCVC, inputCVC)
 })
 
 continueButton.addEventListener('click', () => {
@@ -42,68 +58,34 @@ continueButton.addEventListener('click', () => {
     asideDisplay.style.display = 'flex';
 })
 
-
-inputName.addEventListener('change', () => {
-    if (inputName.validity.patternMismatch){
-        inputName.parentElement.classList.add('error')
-        inputName.setCustomValidity(' ')
+function validityChecker(inp) {
+    if (inp.validity.patternMismatch){
+        inp.parentElement.classList.add('error')
+        inp.setCustomValidity(' ')
+        return false
     } else {
-        inputName.parentElement.classList.remove('error')
-        inputName.setCustomValidity('')
+        inp.parentElement.classList.remove('error')
+        inp.setCustomValidity('')
+        return true
     }
-})
+}
 
-inputNumber.addEventListener('change', () => {
-    if (inputNumber.validity.patternMismatch) {
-        inputNumber.parentElement.classList.add('error')
-        inputNumber.setCustomValidity(' ')
+function mirrorIfValid(func, cardField, inputField){
+    if (func === true){
+        cardField.innerHTML = inputField.value;
     } else {
-        inputNumber.parentElement.classList.remove('error')
-        inputNumber.setCustomValidity('')
+        func
     }
-})
+}
 
-inputExpDateMonth.addEventListener('input', () => {
-    if (inputExpDateMonth.validity.valueMissing) {
-       inputExpDateMonth.parentElement.classList.add('error')
-       inputExpDateMonth.setCustomValidity(' ')
-    } else {
-        inputExpDateMonth.parentElement.classList.remove('error')
-        inputExpDateMonth.setCustomValidity('')
-    }
-})
-
-inputExpDateYear.addEventListener('input', () => {
-    if (inputExpDateYear.validity.valueMissing) {
-        inputExpDateYear.parentElement.classList.add('error')
-        document.querySelector('.date_MM').classList.add('error')
-       inputExpDateYear.setCustomValidity(' ')
-    } else {
-        inputExpDateYear.parentElement.classList.remove('error')
-        document.querySelector('.date_MM').classList.remove('error')
-        inputExpDateYear.setCustomValidity('')
-    }
-})
-
-inputCVC.addEventListener('input', () => {
-    if (inputCVC.validity.valueMissing) {
-        inputCVC.parentElement.classList.add('error')
-        inputCVC.setCustomValidity(' ')
-    } else {
-        inputCVC.parentElement.classList.remove('error')
-        inputCVC.setCustomValidity('')
-    }
-})
-
-
-function func() {
+function inputToCard() {
     cardCVC.innerHTML = inputCVC.value;
     cardName.innerHTML = inputName.value;
     expDateMonth.innerHTML = inputExpDateMonth.value;
     expDateYear.innerHTML = inputExpDateYear.value;
 }
 
-function func2() {
+function cardNumberSeparator() {
     newArr = [arr[1].value]
     
     numA.innerHTML = newArr[0].slice(0, 4)
