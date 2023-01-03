@@ -11,6 +11,7 @@ const inputName = document.querySelector('#full_name')
 const inputExpDateMonth = document.querySelector('#exp_date_MM')
 const inputExpDateYear = document.querySelector('#exp_date_YY')
 const inputCVC = document.querySelector('#cvc')
+const inputNumber = document.querySelector('#card_number')
 const submit =  document.querySelector('.input_submit')
 const continueButton = document.querySelector('#continue_button')
 
@@ -39,6 +40,59 @@ continueButton.addEventListener('click', () => {
     thankyouDisplay.style.display = 'none';
     headerDisplay.style.display = 'none';
     asideDisplay.style.display = 'flex';
+})
+
+
+inputName.addEventListener('change', () => {
+    if (inputName.validity.patternMismatch){
+        inputName.parentElement.classList.add('error')
+        inputName.setCustomValidity(' ')
+    } else {
+        inputName.parentElement.classList.remove('error')
+        inputName.setCustomValidity('')
+    }
+})
+
+inputNumber.addEventListener('change', () => {
+    if (inputNumber.validity.patternMismatch) {
+        inputNumber.parentElement.classList.add('error')
+        inputNumber.setCustomValidity(' ')
+    } else {
+        inputNumber.parentElement.classList.remove('error')
+        inputNumber.setCustomValidity('')
+    }
+})
+
+inputExpDateMonth.addEventListener('input', () => {
+    if (inputExpDateMonth.validity.valueMissing) {
+       inputExpDateMonth.parentElement.classList.add('error')
+       inputExpDateMonth.setCustomValidity(' ')
+    } else {
+        inputExpDateMonth.parentElement.classList.remove('error')
+        inputExpDateMonth.setCustomValidity('')
+    }
+})
+
+inputExpDateYear.addEventListener('input', () => {
+    if (inputExpDateYear.validity.valueMissing) {
+        inputExpDateYear.parentElement.classList.add('error')
+        document.querySelector('.date_MM').classList.add('error')
+       inputExpDateYear.setCustomValidity(' ')
+    } else {
+        inputExpDateYear.parentElement.classList.remove('error')
+        document.querySelector('.date_MM').classList.remove('error')
+        inputExpDateYear.setCustomValidity('')
+    }
+})
+
+inputCVC.addEventListener('input', () => {
+    if (inputCVC.validity.valueMissing) {
+        inputCVC.parentElement.classList.add('error')
+        inputCVC.setCustomValidity(' ')
+    } else {
+        inputCVC.parentElement.classList.remove('error')
+        inputCVC.setCustomValidity('')
+    }
 })
 
 

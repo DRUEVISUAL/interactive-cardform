@@ -165,12 +165,13 @@ main{
     padding-block: .6rem;
 }
 
-.input_label_group.error input, .input_label_group_exp_date.error input, .input_label_group_cvc.error input{
+.input_label_group.error input, .date_MM.error input, .date_YY.error input, .input_label_group_cvc.error input{
     outline: 2px solid red;
 }
 
-.input_label_group input:focus, .input_label_container input:focus-visible, .input_submit:focus{
+.input_label_group input:focus, .input_label_container input:focus, .input_submit:focus{
     outline: 2px solid var(--gradient_purple);
+    border-radius: 8px;
 }
 
 input::placeholder{
@@ -185,7 +186,7 @@ small{
     color: red;
 }
 
-.input_label_group.error small, .input_label_group_exp_date.error small, .input_label_group_cvc.error small{
+.input_label_group.error small, .date_MM.error small, .date_YY.error small, .input_label_group_cvc.error small{
     visibility: visible;
 }
 
@@ -215,6 +216,11 @@ small{
     gap: .5rem;
 }
 
+.date_MM, .date_YY{
+    width: 100%;
+    border-radius: 8px;
+}
+
 .exp_date_input_group input{
     font-size: var(--heading_L);
     color: var(--verydark_violet);
@@ -222,7 +228,7 @@ small{
     border: 1px solid lightgray;
     border-radius: 8px;
 
-    width: 50%;
+    width: 100%;
     padding-block: .6rem;
     padding-left: .8rem;
 }
@@ -385,17 +391,64 @@ aside a:last-child{
     }
     
     main{
-        width: 40%;
+        width: 30%;
         margin-block: unset;
         padding: 0;
+        margin-right: 15%;
+        transform: scale(.9);
     }
 
     form{
         min-width: 100%;
     }
 
+    .header_card_container{
+        top: initial;
+        left: 35%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        width: 405.75px;
+        height: 395.25px;
+    }
+
+    .header_card_back_container{
+        font-size: var(--body_S_M);
+        width: 335.25px;
+        height: 183.75px;
+        padding-right: 2.2rem;
+        padding-bottom: .1rem;
+        box-shadow: 20px 20px 40px hsla(0, 0%, 0%, 0.15);
+        border-radius: 12px;
+    }
+
+    .header_card_front_container{
+        width: 335.25px;
+        height: 183.75px;
+        top: 0;
+        box-shadow: 20px 20px 40px hsla(0, 0%, 0%, 0.15);
+        border-radius: 16px;
+    }
+
+    .header_card_front_first_row{
+        font-size: var(--heading_L);
+        letter-spacing: var(--body_letspace_M_L);
+    }
+
+    .header_card_front_second_row{
+        font-size: var(--body_S_M);
+    }
+
+    .header_card_front_logo{
+        width: 18%;
+    }
+
     .input_submit{
         margin-bottom: unset;
+    }
+
+    .input_label_group, .input_label_container{
+        margin-bottom: 1rem;
     }
 }
 
@@ -403,6 +456,7 @@ aside a:last-child{
     main{
         width: 26.4%;
         margin-right: 15.7%;
+        scale: (1.3);
     }
 
     body{
@@ -419,7 +473,6 @@ aside a:last-child{
         gap: 2rem;
         width: 541px;
         height: 527px;
-
     }
 
     .header_card_back_container{
