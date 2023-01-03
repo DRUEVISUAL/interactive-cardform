@@ -151,13 +151,8 @@ main {
   padding-block: 0.6rem;
 }
 
-.input_label_group.error input, .date_MM.error input, .date_YY.error input, .input_label_group_cvc.error input {
-  outline: 2px solid red;
-}
-
-.input_label_group input:focus, .input_label_container input:focus, .input_submit:focus {
-  outline: 2px solid var(--gradient_purple);
-  border-radius: 8px;
+.input_label_group.error input, .date_MM.error input, .date_YY.error input, .input_label_group_cvc.error input, .input_label_group.blank input, .date_MM.blank input, .date_YY.blank input, .input_label_group_cvc.blank input {
+  outline: 2px solid red !important;
 }
 
 input::-moz-placeholder {
@@ -179,13 +174,23 @@ input::placeholder {
 }
 
 small {
-  visibility: hidden;
+  display: none;
   font-size: var(--body_S_M);
   color: red;
+  margin-bottom: -1.36rem;
 }
 
-.input_label_group.error small, .date_MM.error small, .date_YY.error small, .input_label_group_cvc.error small {
-  visibility: visible;
+.input_label_group.error .wrong_e, .date_MM.error .wrong_e, .date_YY.error .wrong_e, .input_label_group_cvc.error .wrong_e {
+  display: block;
+}
+
+.input_label_group.blank .blank_e, .date_MM.blank .blank_e, .date_YY.blank .blank_e, .input_label_group_cvc.blank .blank_e {
+  display: block;
+}
+
+.input_label_group input:focus, .input_label_container input:focus, .input_submit:focus {
+  outline: 2px solid var(--gradient_purple);
+  border-radius: 8px;
 }
 
 .input_label_container {
@@ -408,7 +413,7 @@ aside a:last-child {
     margin-bottom: unset;
   }
   .input_label_group, .input_label_container {
-    margin-bottom: 1rem;
+    margin-bottom: 2.2rem;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -457,6 +462,6 @@ aside a:last-child {
     width: 18%;
   }
   .input_label_group, .input_label_container {
-    margin-bottom: 1.4rem;
+    margin-bottom: 2.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
