@@ -28,10 +28,6 @@ const thankyouDisplay = document.querySelector('#thanks_panel')
 const headerDisplay = document.querySelector('#header')
 const asideDisplay = document.querySelector('#aside')
 
-window.addEventListener('load', () => {
-    thankyouDisplay.style.display = 'none';
-    asideDisplay.style.display = 'none';
-}) 
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()

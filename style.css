@@ -132,7 +132,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .input_label_group label, .input_label_container label {
@@ -197,7 +197,7 @@ small {
   width: 100%;
   display: flex;
   gap: 0.7rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .input_label_group_exp_date {
@@ -258,7 +258,7 @@ small {
 }
 
 #thanks_panel {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -294,7 +294,7 @@ aside {
   background-image: url(./images/bg-main-desktop.png);
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -328,11 +328,11 @@ aside a:last-child {
 
 .reload {
   font-size: var(--heading_L);
-  color: var(--gradient_purple);
+  color: purple;
   background-color: white;
   border: none;
   border-radius: 8px;
-  width: 50%;
+  width: 30%;
   padding-block: 0.8rem;
   cursor: pointer;
 }
